@@ -35,6 +35,6 @@ def base64save(img):
 
 
 def func(img, msk):
-    #image = mojiartfunc(img, msk)
-    image = Image.open(img)
+    image = mojiartfunc(img, msk)
+    #image = Image.open(img)
     return base64save(image)
