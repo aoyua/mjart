@@ -1,6 +1,7 @@
 from PIL import Image, ImageFont, ImageDraw
 import numpy as np
 import  random
+from django.conf import settings
 
 def resize_strimg(IMG):
     global GIF, ONES, SMAX, SMIN, FONT, ORGIMG, MSKIMG, DIR, BACKGROUND, SPACE, str_img, c, org_img, w, h, org_img_array, msk_img, msk_img_array, img, img2, tmp_img, img_array, img2_array, tmp_img_array, gif_img, strings
@@ -19,7 +20,7 @@ def init(orgimg, mskimg):
     strings = ("mario", "マ\nリ\nオ", "スーパーマリオ", "任天堂", "ルイ\nージ", "ピーチ", "ク\nッ\nパ", "まりお", "ブラザーズ", "Super Mario", "MARIO", "M\na\nr\ni\no", "M", "クリ\nボー", "きのこ", "L") #\nで文字を縦に
     SMAX = 25 #最大ピクセル
     SMIN = 15 #最小ピクセル
-    FONT = 'meiryo.ttc'
+    FONT = str(settings.BASE_DIR) + 'meiryo.ttc'
 
     ORGIMG = orgimg
     MSKIMG = mskimg
